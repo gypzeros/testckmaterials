@@ -19,7 +19,7 @@ export const brands: Brand[] = [
   {
     name: "Lea Ceramiche",
     slug: "lea-ceramiche",
-    url: "https://www.ceramichelea.it/",
+    url: "https://www.leaceramiche.com/",
     description:
       "Cerámica italiana de alta gama reconocida por sus superficies porcelánicas de gran formato.",
     image:
@@ -37,7 +37,7 @@ export const brands: Brand[] = [
   {
     name: "La Faenza",
     slug: "la-faenza",
-    url: "https://www.lafaenza.it/",
+    url: "https://lafaenzaceramica.com/",
     description:
       "Porcelánico italiano con diseños que reflejan la elegancia de la tradición cerámica de Faenza.",
     image:
@@ -82,7 +82,7 @@ export const brands: Brand[] = [
   {
     name: "Tender Rain",
     slug: "tender-rain",
-    url: "https://www.tenderrain.it/",
+    url: "https://www.tenderrain.com/",
     description:
       "Diseño italiano en grifería y sistemas de ducha con líneas minimalistas y funcionales.",
     image:
