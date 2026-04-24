@@ -44,11 +44,11 @@ export const brands: Brand[] = [
       "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=400&fit=crop",
   },
   {
-    name: "Marges",
-    slug: "marges",
-    url: "https://www.marges.com/",
+    name: "Margres",
+    slug: "margres",
+    url: "https://margres.com/",
     description:
-      "Materiales de construcción con amplio catálogo de soluciones para pavimentos y revestimientos.",
+      "Porcelánico portugués de gran formato con acabados naturales y diseño contemporáneo.",
     image:
       "https://images.unsplash.com/photo-1600573472592-401b489a3cdc?w=600&h=400&fit=crop",
   },
