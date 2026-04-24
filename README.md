@@ -1,36 +1,107 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# CKMaterials — Landing Page
 
-## Getting Started
+Landing page profesional para **CKMaterials**, distribuidor de cerámica, porcelánico, azulejos y revestimientos de alta calidad.
 
-First, run the development server:
+## Stack
+
+- **Next.js 16** (App Router, TypeScript)
+- **Tailwind CSS v4**
+- **Framer Motion** (animaciones)
+- **Lucide React** (iconos)
+- **Google Fonts** (Cormorant Garamond + Inter)
+
+## Desarrollo local
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abre [http://localhost:3000](http://localhost:3000) en tu navegador.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Build de producción
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+## Deploy en Vercel
 
-To learn more about Next.js, take a look at the following resources:
+1. Sube el repositorio a GitHub:
+   ```bash
+   git init
+   git add .
+   git commit -m "Initial commit"
+   git branch -M main
+   git remote add origin https://github.com/TU_USUARIO/ckmaterials.git
+   git push -u origin main
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. Ve a [vercel.com](https://vercel.com), importa el repositorio y haz clic en **Deploy**. No necesita variables de entorno ni configuración especial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Personalización
 
-## Deploy on Vercel
+### Datos de contacto y formulario
+Edita `lib/config.ts`:
+- `FORMSPREE_ENDPOINT`: tu endpoint de [Formspree](https://formspree.io) (gratuito)
+- `CONTACT_INFO`: teléfono, email y dirección
+- `GOOGLE_MAPS_EMBED_URL`: URL de Google Maps embebido
+- `SOCIAL_LINKS`: URLs de redes sociales
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Marcas
+Edita `lib/brands.ts` para añadir, quitar o modificar marcas. Cada marca tiene:
+- `name`: nombre visible
+- `slug`: identificador URL
+- `url`: web oficial / catálogo
+- `description`: breve descripción
+- `image`: URL de imagen representativa
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Colores
+Los colores se definen en `app/globals.css` dentro de `@theme inline`:
+- `--color-charcoal`: negro profundo (#1a1a1a)
+- `--color-sand`: arena/beige (#d4c5a9)
+- `--color-accent`: terracota/dorado (#b8864a)
+- `--color-cream`: fondo blanco roto (#faf8f5)
+
+### Textos
+- Hero: `components/Hero.tsx`
+- Sobre nosotros: `components/About.tsx`
+- Servicios: `components/Services.tsx`
+- Páginas legales: `app/aviso-legal/page.tsx` y `app/privacidad/page.tsx`
+
+### SEO
+Metadatos en `app/layout.tsx`. Sitemap y robots en `app/sitemap.ts` y `app/robots.ts`.
+
+## Estructura del proyecto
+
+```
+ckmaterials/
+├── app/
+│   ├── layout.tsx          # Layout principal
+│   ├── page.tsx            # Página de inicio
+│   ├── globals.css         # Estilos y tema
+│   ├── sitemap.ts          # Sitemap XML
+│   ├── robots.ts           # Robots.txt
+│   ├── aviso-legal/        # Página de aviso legal
+│   └── privacidad/         # Página de privacidad
+├── components/
+│   ├── Navbar.tsx           # Barra de navegación
+│   ├── Hero.tsx             # Sección hero
+│   ├── About.tsx            # Sobre nosotros
+│   ├── Brands.tsx           # Grid de marcas
+│   ├── BrandModal.tsx       # Modal con iframe del catálogo
+│   ├── Gallery.tsx          # Galería masonry
+│   ├── Services.tsx         # Servicios
+│   ├── Contact.tsx          # Formulario + mapa
+│   ├── Footer.tsx           # Pie de página
+│   └── Logo.tsx             # Logo SVG
+├── lib/
+│   ├── brands.ts            # Datos de marcas
+│   └── config.ts            # Configuración (endpoints, contacto)
+├── public/
+│   └── images/
+├── next.config.ts
+├── tsconfig.json
+└── package.json
+```
